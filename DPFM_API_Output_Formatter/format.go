@@ -20,7 +20,7 @@ func ConvertToGeneral(rows *sql.Rows) (*[]General, error) {
 			&pm.Plant,
 			&pm.StorageLocation,
 			&pm.StorageBin,
-			&pm.StorageType,
+			&pm.StorageBinDescription,
 			&pm.XCoordinates,
 			&pm.YCoordinates,
 			&pm.ZCoordinates,
@@ -28,6 +28,9 @@ func ConvertToGeneral(rows *sql.Rows) (*[]General, error) {
 			&pm.CapacityUnit,
 			&pm.CapacityWeight,
 			&pm.CapacityWeightUnit,
+			&pm.CreationDate,
+			&pm.LastChangeDate,
+			&pm.IsMarkedForDeletion,
 		)
 		if err != nil {
 			fmt.Printf("err = %+v \n", err)
@@ -36,18 +39,21 @@ func ConvertToGeneral(rows *sql.Rows) (*[]General, error) {
 
 		data := pm
 		general = append(general, General{
-			BusinessPartner:    data.BusinessPartner,
-			Plant:              data.Plant,
-			StorageLocation:    data.StorageLocation,
-			StorageBin:         data.StorageBin,
-			StorageType:        data.StorageType,
-			XCoordinates:       data.XCoordinates,
-			YCoordinates:       data.YCoordinates,
-			ZCoordinates:       data.ZCoordinates,
-			Capacity:           data.Capacity,
-			CapacityUnit:       data.CapacityUnit,
-			CapacityWeight:     data.CapacityWeight,
-			CapacityWeightUnit: data.CapacityWeightUnit,
+			BusinessPartner:    	data.BusinessPartner,
+			Plant:              	data.Plant,
+			StorageLocation:    	data.StorageLocation,
+			StorageBin:         	data.StorageBin,
+			StorageBinDescription:	data.StorageBinDescription,
+			XCoordinates:       	data.XCoordinates,
+			YCoordinates:       	data.YCoordinates,
+			ZCoordinates:       	data.ZCoordinates,
+			Capacity:           	data.Capacity,
+			CapacityUnit:       	data.CapacityUnit,
+			CapacityWeight:     	data.CapacityWeight,
+			CapacityWeightUnit: 	data.CapacityWeightUnit,
+			CreationDate: 			data.CreationDate,
+			LastChangeDate: 		data.LastChangeDate,
+			IsMarkedForDeletion: 	data.IsMarkedForDeletion,
 		})
 	}
 	if i == 0 {

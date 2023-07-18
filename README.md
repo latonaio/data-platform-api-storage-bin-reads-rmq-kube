@@ -1,14 +1,13 @@
 # data-platform-api-storage-bin-reads-rmq-kube
 
-data-platform-api-storage-bin-reads-rmq-kube は、周辺業務システム　を データ連携基盤 と統合することを目的に、API で棚番データを登録するマイクロサービスです。  
-https://xxx.xxx.io/api/API_STORAGE_BIN_SRV/creates/
+data-platform-api-storage-bin-reads-rmq-kube は、周辺業務システム　を データ連携基盤 と統合することを目的に、API で棚番データを取得するマイクロサービスです。  
+https://xxx.xxx.io/api/API_STORAGE_BIN_SRV/reads/
 
 ## 動作環境
 
 data-platform-api-storage-bin-reads-rmq-kube の動作環境は、次の通りです。  
 ・ OS: LinuxOS （必須）  
 ・ CPU: ARM/AMD/Intel（いずれか必須）  
-
 
 ## 本レポジトリ が 対応する API サービス
 data-platform-api-storage-bin-reads-rmq-kube が対応する APIサービス は、次のものです。
@@ -20,7 +19,6 @@ data-platform-api-storage-bin-reads-rmq-kube には、次の API をコールす
 
 * A_General（データ連携基盤 棚番 - 一般データ）
  
-
 ## API への 値入力条件 の 初期値
 data-platform-api-storage-bin-reads-rmq-kube において、API への値入力条件の初期値は、入力ファイルレイアウトの種別毎に、次の通りとなっています。  
 
@@ -37,8 +35,6 @@ accepter において 下記の例のように、データの種別（＝APIの�
 ```
 	"api_schema": "DPFMStorageBinReads",
 	"accepter": ["General"],
-	"storage_bin": "",
-	"deleted": false
 ```
   
 * 全データを取得する際のsample.jsonの記載例(2)  
@@ -48,8 +44,6 @@ accepter において 下記の例のように、データの種別（＝APIの�
 ```
 	"api_schema": "DPFMStorageBinReads",
 	"accepter": ["All"],
-	"storage_bin": "",
-	"deleted": false
 ```
 
 ## 指定されたデータ種別のコール
@@ -58,7 +52,7 @@ accepter における データ種別 の指定に基づいて DPFM_API_Caller �
 caller.go の func() 毎 の 以下の箇所が、指定された API をコールするソースコードです。  
 
 ```
-func (c *DPFMAPICaller) AsyncStorageBinReads(
+func (c *DPFMAPICaller) AsyncReads(
 	accepter []string,
 	input *dpfm_api_input_reader.SDC,
 	output *dpfm_api_output_formatter.SDC,
@@ -83,4 +77,3 @@ func (c *DPFMAPICaller) AsyncStorageBinReads(
 ```
 XXX
 ```
-

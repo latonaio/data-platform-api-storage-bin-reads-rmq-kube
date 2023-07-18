@@ -5,25 +5,28 @@
 	"filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
 	"api_status_code": 200,
 	"runtime_session_id": "boi9ar543dg91ipdnspi099u231280ab0v8af0ew",
-	"business_partner": 201,
-	"service_label": "STORAGEBIN",
+	"business_partner": null,
+	"service_label": "STORAGE_BIN",
+	"api_type": "reads",
 	"StorageBin": {
-		"BusinessPartner": 102,
-		"Plant": "AB02",
-		"StorageLocation": "0001",
-		"StorageBin": "",
-		"StorageType": "",
+		"BusinessPartner": 101,
+		"Plant": "TE01",
+		"StorageLocation": "TE01",
+		"StorageBin": "AAAA-0001",
+		"StorageDescription": "",
 		"XCoordinates": null,
 		"YCoordinates": null,
 		"ZCoordinates": null,
 		"Capacity": null,
 		"CapacityUnit": "",
 		"CapacityWeight": null,
-		"CapacityWeightUnit": ""
+		"CapacityWeightUnit": "",
+		"CreationDate": "",
+		"LastChangeDate": "",
+		"IsMarkedForDeletion": null
 	},
-	"api_schema": "DPFMStorageBinCreates",
+	"api_schema": "DPFMStorageBinReads",
 	"accepter": [
-		"General"
-	],
-	"deleted": false
+		"All"
+	]
 }
