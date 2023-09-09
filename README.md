@@ -17,7 +17,7 @@ APIサービス URL: https://xxx.xxx.io/api/API_STORAGE_BIN_SRV/reads/
 ## 本レポジトリ に 含まれる API名
 data-platform-api-storage-bin-reads-rmq-kube には、次の API をコールするためのリソースが含まれています。  
 
-* A_General（データ連携基盤 棚番 - 一般データ）
+* A_General（棚番 - 一般データ）
  
 ## API への 値入力条件 の 初期値
 data-platform-api-storage-bin-reads-rmq-kube において、API への値入力条件の初期値は、入力ファイルレイアウトの種別毎に、次の通りとなっています。  
@@ -72,7 +72,7 @@ func (c *DPFMAPICaller) AsyncReads(
 ## Output  
 本マイクロサービスでは、[golang-logging-library-for-data-platform](https://github.com/latonaio/golang-logging-library-for-data-platform) により、以下のようなデータがJSON形式で出力されます。  
 以下の sample.json の例は 棚番 の 一般データ が取得された結果の JSON の例です。  
-以下の項目のうち、"OrderID" ～ "PlusMinusFlag" は、/DPFM_API_Output_Formatter/type.go 内 の Type Header {} による出力結果です。"cursor" ～ "time"は、golang-logging-library による 定型フォーマットの出力結果です。  
+以下の項目のうち、"BusinessPartner" ～ "IsMarkedForDeletion" は、/DPFM_API_Output_Formatter/type.go 内 の Type Header {} による出力結果です。"cursor" ～ "time"は、golang-logging-library による 定型フォーマットの出力結果です。  
 
 ```
 XXX

@@ -27,6 +27,6 @@
 	},
 	"api_schema": "DPFMStorageBinReads",
 	"accepter": [
-		"All"
+		"General"
 	]
 }

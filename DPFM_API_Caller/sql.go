@@ -49,10 +49,11 @@ func (c *DPFMAPICaller) General(
 	businessPartner := input.General.BusinessPartner
 	plant := input.General.Plant
 	storageLocation := input.General.StorageLocation
+	storageBin := input.General.StorageBin
 	rows, err := c.db.Query(
 		`SELECT *
 		FROM DataPlatformMastersAndTransactionsMysqlKube.data_platform_storage_bin_general_data
-		WHERE (BusinessPartner, Plant, StorageLocation) = (?, ?, ?);`, businessPartner, plant, storageLocation,
+		WHERE (BusinessPartner, Plant, StorageLocation, StorageBin) = (?, ?, ?, ?);`, businessPartner, plant, storageLocation, storageBin,
 	)
 	if err != nil {
 		*errs = append(*errs, err)
